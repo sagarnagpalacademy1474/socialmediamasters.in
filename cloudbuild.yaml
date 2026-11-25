@@ -1,0 +1,11 @@
+# Auto-deploy: a Cloud Build trigger runs this on every push to main.
+steps:
+  - name: python:3.12-slim
+    entrypoint: python
+    args: ["build.py"]
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+    entrypoint: gcloud
+    args: ["app", "deploy", "app.yaml", "--quiet", "--project=$PROJECT_ID"]
+timeout: 900s
+options:
+  logging: CLOUD_LOGGING_ONLY

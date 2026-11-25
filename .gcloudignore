@@ -3,3 +3,4 @@
 src/
 build.py
 README.md
+cloudbuild.yaml
