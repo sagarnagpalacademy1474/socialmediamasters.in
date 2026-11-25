@@ -94,9 +94,11 @@
       b.addEventListener('click', function () { show(cur - 1); });
     });
     form.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' && e.target.tagName === 'INPUT' && cur < steps.length - 1) {
-        e.preventDefault(); if (valid(cur)) show(cur + 1);
-      }
+      if (e.key !== 'Enter' || e.target.tagName !== 'INPUT') return;
+      var ins = Array.prototype.slice.call(steps[cur].querySelectorAll('input'));
+      var i = ins.indexOf(e.target);
+      if (i > -1 && i < ins.length - 1) { e.preventDefault(); ins[i + 1].focus(); return; }
+      if (cur < steps.length - 1) { e.preventDefault(); if (valid(cur)) show(cur + 1); }
     });
     form.addEventListener('submit', function (e) {
       if (!valid(cur)) { e.preventDefault(); e.stopImmediatePropagation(); }
