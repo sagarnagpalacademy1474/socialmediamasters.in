@@ -83,7 +83,7 @@ def layout(meta, body, path):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css?v={VERSION}">
-<script type="application/ld+json">{{"@context":"https://schema.org","@type":"ProfessionalService","name":"Social Media Masters","url":"{SITE}","slogan":"Brands That Outlast the Feed.","telephone":"+91-99119-41474","email":"socialmediamasters.in@gmail.com","address":{{"@type":"PostalAddress","addressLocality":"Delhi","addressCountry":"IN"}},"sameAs":["https://www.instagram.com/socialmediamasters.in/"]}}</script>
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"ProfessionalService","name":"Social Media Masters","url":"{SITE}","slogan":"Brands That Outlast the Feed.","telephone":"+91-9911-94-14-74","email":"socialmediamasters.in@gmail.com","address":{{"@type":"PostalAddress","addressLocality":"Delhi","addressCountry":"IN"}},"sameAs":["https://www.instagram.com/socialmediamasters.in/"]}}</script>
 </head>
 <body>
 <header class="site-header">
@@ -113,7 +113,7 @@ def layout(meta, body, path):
       <div>
         <h4>Reach us</h4>
         <ul>
-          <li><a href="https://wa.me/{WA_NUMBER}" target="_blank" rel="noopener">WhatsApp +91 99119 41474</a></li>
+          <li><a href="https://wa.me/{WA_NUMBER}" target="_blank" rel="noopener">WhatsApp +91 9911 94 14 74</a></li>
           <li><a href="/contact/#call">Book a free call</a></li>
           <li><a href="https://www.instagram.com/socialmediamasters.in/" target="_blank" rel="noopener">@socialmediamasters.in</a></li>
           <li><a href="mailto:socialmediamasters.in@gmail.com">socialmediamasters.in@gmail.com</a></li>
