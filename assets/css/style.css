@@ -301,3 +301,8 @@ a.contact-item:hover{border-color:var(--champ-d)}
   .brand span{display:none}
   .toggle button{padding:10px 14px;font-size:13px}
 }
+
+/* form card sits on a dark hero: keep its text dark on white */
+.dark .form-card h3{color:var(--mid)}
+.dark .form-card p,.dark .form-card .muted,.dark .form-card .form-note{color:var(--muted)}
+.dark .form-card label{color:var(--mid)}
