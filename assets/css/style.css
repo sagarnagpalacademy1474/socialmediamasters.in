@@ -306,3 +306,39 @@ a.contact-item:hover{border-color:var(--champ-d)}
 .dark .form-card h3{color:var(--mid)}
 .dark .form-card p,.dark .form-card .muted,.dark .form-card .form-note{color:var(--muted)}
 .dark .form-card label{color:var(--mid)}
+
+/* Step-by-step form (Option C) */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.step-form{border-radius:22px;padding:40px 38px;border:0;box-shadow:0 40px 80px -40px rgba(0,0,0,.75)}
+.sf-prog{display:flex;gap:8px;margin-bottom:14px}
+.sf-prog i{flex:1;height:4px;border-radius:4px;background:rgba(10,26,51,.1);transition:background .3s}
+.sf-prog i.on{background:var(--champ-d)}
+.sf-count{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--champ-d);font-weight:600}
+.step-form h3{color:var(--mid)!important;font-size:clamp(26px,2.6vw,32px);margin:20px 0 8px;line-height:1.2}
+.step-form h3 em{color:var(--champ-d)}
+.sf-sub{color:var(--muted)!important;font-size:15px;margin-bottom:24px}
+.step-form input,.cform input,.cform textarea{width:100%;padding:18px 20px;border:2px solid rgba(10,26,51,.18);border-radius:14px;font:500 17px var(--sans);color:var(--mid);background:#fff;transition:border-color .2s;margin-bottom:12px}
+.step-form input:focus,.cform input:focus,.cform textarea:focus{outline:none;border-color:var(--mid)}
+.step-form input::placeholder,.cform input::placeholder,.cform textarea::placeholder{color:rgba(10,26,51,.38)}
+.step-form input.bad{border-color:#B4462F}
+.step-form .chips{display:flex;flex-wrap:wrap;gap:10px}
+.step-form .chips button,.cform .chips button{border:1px solid rgba(10,26,51,.2);background:#fff;color:var(--mid);border-radius:999px;padding:11px 18px;font:500 15px var(--sans);cursor:pointer;transition:.2s}
+.step-form .chips button:hover,.cform .chips button:hover{border-color:var(--mid)}
+.step-form .chips button.on,.cform .chips button.on{background:var(--mid);color:var(--ivory);border-color:var(--mid)}
+.sf-row{display:flex;justify-content:space-between;align-items:center;margin-top:28px;gap:12px}
+.sf-back{background:none;border:0;color:var(--muted);font:500 15px var(--sans);cursor:pointer;padding:10px 0}
+.sf-back:hover{color:var(--mid)}
+.sf-next,.sf-send,.cform .sf-send{padding:16px 30px;border:0;border-radius:999px;background:var(--champ);color:var(--mid);font:600 15px var(--sans);cursor:pointer;transition:background .2s,transform .2s}
+.sf-next:hover,.sf-send:hover{background:#E6D3B2;transform:translateY(-1px)}
+.sf-note{color:var(--muted)!important;font-size:13px;margin-top:18px}
+.sf-step{animation:sfIn .35s ease}
+@keyframes sfIn{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+.step-form .form-ok{padding:10px 0 0}
+.cform{border-radius:22px;padding:40px 38px;box-shadow:0 30px 60px -40px rgba(10,26,51,.5)}
+.cform h3{color:var(--mid);font-size:30px;margin-bottom:6px}
+.cform h3 em{color:var(--champ-d)}
+.cform .chips{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 18px}
+.cform .sf-label{font-size:13px;color:var(--muted);font-weight:600;margin:10px 0 8px}
+.cform textarea{min-height:120px;resize:vertical}
+.cform .sf-send{width:100%;margin-top:10px}
+@media (max-width:600px){.step-form,.cform{padding:30px 22px}}

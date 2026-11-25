@@ -47,19 +47,37 @@
       </ol>
       <p style="margin-top:30px">Prefer Instagram? DM us <b style="color:var(--champ)">"AUDIT"</b> at <a href="https://www.instagram.com/socialmediamasters.in/" target="_blank" rel="noopener" style="text-decoration:underline">@socialmediamasters.in</a>.</p>
     </div>
-    <div class="form-card">
-      <form data-wa="Hi Social Media Masters, I'd like a free brand audit.">
-        <h3>Request your free audit</h3>
-        <p class="muted" style="font-size:15px">Takes 30 seconds.</p>
-        <div class="field"><label for="a-name">Your name</label><input id="a-name" data-label="Name" required autocomplete="name"></div>
-        <div class="field"><label for="a-biz">Business or brand name</label><input id="a-biz" data-label="Business" required autocomplete="organization"></div>
-        <div class="field"><label for="a-page">Instagram handle or page link</label><input id="a-page" data-label="Page" required placeholder="@yourbrand"></div>
-        <div class="field"><label for="a-wa">WhatsApp number</label><input id="a-wa" data-label="WhatsApp" required type="tel" autocomplete="tel" placeholder="+91"></div>
-        <div class="field"><label for="a-goal">What do you want your page to do better? <small>(optional)</small></label><textarea id="a-goal" data-label="Goal"></textarea></div>
-        <button class="btn btn-dark" type="submit">Send my audit request</button>
-        <p class="form-note">This opens WhatsApp with your details filled in. We'll send your video review on WhatsApp. Your details are only used to reply to you.</p>
+    <div class="form-card step-form">
+      <form data-wa="Hi Social Media Masters, I'd like a free brand audit." novalidate>
+        <div class="sf-prog" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="sf-step" data-step="1">
+          <div class="sf-count">Step 1 of 3</div>
+          <h3>What do you want <em>most?</em></h3>
+          <p class="sf-sub">Pick one or more. It helps us focus your audit.</p>
+          <div class="chips" data-label="Wants">
+            <button type="button">More enquiries</button><button type="button">A premium look</button><button type="button">Consistency</button><button type="button">More followers</button><button type="button">Better ads</button><button type="button">A website</button>
+          </div>
+          <div class="sf-row"><span></span><button class="sf-next" type="button">Next →</button></div>
+        </div>
+        <div class="sf-step" data-step="2" hidden>
+          <div class="sf-count">Step 2 of 3</div>
+          <h3>Where can we see <em>your page?</em></h3>
+          <p class="sf-sub">Your Instagram handle or page link, and your brand name.</p>
+          <label class="sr" for="a-page">Instagram handle or page link</label><input id="a-page" data-label="Page" required placeholder="@yourbrand">
+          <label class="sr" for="a-biz">Business or brand name</label><input id="a-biz" data-label="Business" required autocomplete="organization" placeholder="Brand name">
+          <div class="sf-row"><button class="sf-back" type="button">← Back</button><button class="sf-next" type="button">Next →</button></div>
+        </div>
+        <div class="sf-step" data-step="3" hidden>
+          <div class="sf-count">Step 3 of 3</div>
+          <h3>Where should we send <em>your audit?</em></h3>
+          <p class="sf-sub">We send your video review on WhatsApp.</p>
+          <label class="sr" for="a-name">Your name</label><input id="a-name" data-label="Name" required autocomplete="name" placeholder="Your name">
+          <label class="sr" for="a-wa">WhatsApp number</label><input id="a-wa" data-label="WhatsApp" required type="tel" autocomplete="tel" placeholder="WhatsApp number  +91">
+          <div class="sf-row"><button class="sf-back" type="button">← Back</button><button class="sf-send" type="submit">Send request →</button></div>
+          <p class="sf-note">No cost, no obligation. Opens WhatsApp with your details filled in.</p>
+        </div>
       </form>
-      <div class="form-ok"><h3>Thank you!</h3><p class="muted">Press send in WhatsApp and we've got your request. Your free brand audit will reach you on WhatsApp soon.</p></div>
+      <div class="form-ok"><div class="sf-count">Done</div><h3>Thank <em>you!</em></h3><p class="sf-sub">Press send in WhatsApp and we've got your request. Your free brand audit will reach you on WhatsApp soon.</p></div>
     </div>
   </div>
 </section>

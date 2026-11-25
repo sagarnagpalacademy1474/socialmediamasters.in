@@ -57,14 +57,64 @@
     });
   }
 
+  // Chips (multi-select)
+  document.querySelectorAll('.chips').forEach(function (g) {
+    g.addEventListener('click', function (e) {
+      var b = e.target.closest('button');
+      if (b) b.classList.toggle('on');
+    });
+  });
+
+  // Step-by-step form
+  document.querySelectorAll('.step-form form').forEach(function (form) {
+    var steps = form.querySelectorAll('.sf-step');
+    var bars = form.querySelectorAll('.sf-prog i');
+    var cur = 0;
+    function show(i) {
+      steps.forEach(function (s, k) { s.hidden = k !== i; });
+      bars.forEach(function (b, k) { b.classList.toggle('on', k <= i); });
+      cur = i;
+      var first = steps[i].querySelector('input');
+      if (first && i > 0) first.focus();
+    }
+    function valid(i) {
+      var ok = true;
+      steps[i].querySelectorAll('input[required]').forEach(function (f) {
+        var bad = !f.value.trim();
+        f.classList.toggle('bad', bad);
+        if (bad && ok) { f.focus(); ok = false; }
+      });
+      return ok;
+    }
+    form.querySelectorAll('.sf-next').forEach(function (b) {
+      b.addEventListener('click', function () { if (valid(cur)) show(cur + 1); });
+    });
+    form.querySelectorAll('.sf-back').forEach(function (b) {
+      b.addEventListener('click', function () { show(cur - 1); });
+    });
+    form.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && e.target.tagName === 'INPUT' && cur < steps.length - 1) {
+        e.preventDefault(); if (valid(cur)) show(cur + 1);
+      }
+    });
+    form.addEventListener('submit', function (e) {
+      if (!valid(cur)) { e.preventDefault(); e.stopImmediatePropagation(); }
+    }, true);
+    show(0);
+  });
+
   // Forms open WhatsApp with the details filled in
   document.querySelectorAll('form[data-wa]').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      if (!form.reportValidity()) return;
+      if (!form.hasAttribute('novalidate') && !form.reportValidity()) return;
       var lines = [form.getAttribute('data-wa')];
       form.querySelectorAll('input, textarea').forEach(function (f) {
         if (f.value.trim()) lines.push(f.getAttribute('data-label') + ': ' + f.value.trim());
+      });
+      form.querySelectorAll('.chips').forEach(function (g) {
+        var picked = Array.prototype.map.call(g.querySelectorAll('button.on'), function (b) { return b.textContent; });
+        if (picked.length) lines.push(g.getAttribute('data-label') + ': ' + picked.join(', '));
       });
       var url = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(lines.join('\n'));
       window.open(url, '_blank', 'noopener');

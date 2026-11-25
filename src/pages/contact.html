@@ -23,16 +23,20 @@ nav: contact
       <div class="contact-item"><div><span>Location</span><b>Delhi, India</b></div></div>
       <p class="muted" style="margin-top:8px">We reply Monday to Saturday, 10 AM to 7 PM.</p>
     </div>
-    <div class="form-card reveal">
+    <div class="form-card cform reveal">
       <form data-wa="Hi Social Media Masters,">
-        <h3>Send us a message</h3>
-        <div class="field"><label for="c-name">Your name</label><input id="c-name" data-label="Name" required autocomplete="name"></div>
-        <div class="field"><label for="c-wa">WhatsApp number</label><input id="c-wa" data-label="WhatsApp" required type="tel" autocomplete="tel" placeholder="+91"></div>
-        <div class="field"><label for="c-msg">Message</label><textarea id="c-msg" data-label="Message" required></textarea></div>
-        <button class="btn btn-dark" type="submit">Send message</button>
-        <p class="form-note">This opens WhatsApp with your message filled in.</p>
+        <div class="sf-count">Message us</div>
+        <h3 style="margin-top:14px">Send us a <em>message</em></h3>
+        <p class="sf-sub">We reply on WhatsApp, Monday to Saturday.</p>
+        <div class="sf-label">What's it about?</div>
+        <div class="chips" data-label="About"><button type="button">Monthly plans</button><button type="button">Website or app</button><button type="button">Ads</button><button type="button">Something else</button></div>
+        <label class="sr" for="c-name">Your name</label><input id="c-name" data-label="Name" required autocomplete="name" placeholder="Your name">
+        <label class="sr" for="c-wa">WhatsApp number</label><input id="c-wa" data-label="WhatsApp" required type="tel" autocomplete="tel" placeholder="WhatsApp number  +91">
+        <label class="sr" for="c-msg">Message</label><textarea id="c-msg" data-label="Message" required placeholder="Your message"></textarea>
+        <button class="sf-send" type="submit">Send message →</button>
+        <p class="sf-note" style="text-align:center">Opens WhatsApp with your message filled in.</p>
       </form>
-      <div class="form-ok"><h3>Thank you!</h3><p class="muted">Press send in WhatsApp and we'll reply soon.</p></div>
+      <div class="form-ok"><h3>Thank <em>you!</em></h3><p class="sf-sub">Press send in WhatsApp and we'll reply soon.</p></div>
     </div>
   </div>
 </section>
