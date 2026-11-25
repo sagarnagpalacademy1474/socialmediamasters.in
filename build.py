@@ -114,6 +114,7 @@ def layout(meta, body, path):
         <h4>Reach us</h4>
         <ul>
           <li><a href="https://wa.me/{WA_NUMBER}" target="_blank" rel="noopener">WhatsApp +91 99119 41474</a></li>
+          <li><a href="/contact/#call">Book a free call</a></li>
           <li><a href="https://www.instagram.com/socialmediamasters.in/" target="_blank" rel="noopener">@socialmediamasters.in</a></li>
           <li><a href="mailto:socialmediamasters.in@gmail.com">socialmediamasters.in@gmail.com</a></li>
           <li>Delhi, India</li>

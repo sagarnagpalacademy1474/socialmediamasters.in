@@ -61,7 +61,9 @@
   document.querySelectorAll('.chips').forEach(function (g) {
     g.addEventListener('click', function (e) {
       var b = e.target.closest('button');
-      if (b) b.classList.toggle('on');
+      if (!b) return;
+      if (g.hasAttribute('data-single')) g.querySelectorAll('button').forEach(function (x) { if (x !== b) x.classList.remove('on'); });
+      b.classList.toggle('on');
     });
   });
 
@@ -106,11 +108,21 @@
     show(0);
   });
 
+  document.querySelectorAll('form[data-wa]').forEach(function (form) {
+    form.addEventListener('input', function (e) { if (e.target.value.trim()) e.target.classList.remove('bad'); });
+  });
+
   // Forms open WhatsApp with the details filled in
   document.querySelectorAll('form[data-wa]').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      if (!form.hasAttribute('novalidate') && !form.reportValidity()) return;
+      if (!form.closest('.step-form')) {
+        var bad = null;
+        form.querySelectorAll('[required]').forEach(function (f) {
+          var b = !f.value.trim(); f.classList.toggle('bad', b); if (b && !bad) bad = f;
+        });
+        if (bad) { bad.focus(); return; }
+      }
       var lines = [form.getAttribute('data-wa')];
       form.querySelectorAll('input, textarea').forEach(function (f) {
         if (f.value.trim()) lines.push(f.getAttribute('data-label') + ': ' + f.value.trim());
