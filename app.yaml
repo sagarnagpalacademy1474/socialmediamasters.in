@@ -1,0 +1,19 @@
+# Google App Engine (standard) config: serves the built site in public/ as static files.
+runtime: python312
+handlers:
+  - url: /
+    static_files: public/index.html
+    upload: public/index.html
+    secure: always
+  - url: /(.*)/
+    static_files: public/\1/index.html
+    upload: public/(.*)/index.html
+    secure: always
+  - url: /(.*\.(css|js|png|svg|ico|xml|txt|html))$
+    static_files: public/\1
+    upload: public/.*\.(css|js|png|svg|ico|xml|txt|html)$
+    secure: always
+  - url: /(.*)
+    static_files: public/\1/index.html
+    upload: public/(.*)/index.html
+    secure: always
