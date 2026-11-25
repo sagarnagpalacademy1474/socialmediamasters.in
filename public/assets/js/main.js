@@ -86,6 +86,7 @@
       });
       return ok;
     }
+    form.addEventListener('input', function (e) { if (e.target.value.trim()) e.target.classList.remove('bad'); });
     form.querySelectorAll('.sf-next').forEach(function (b) {
       b.addEventListener('click', function () { if (valid(cur)) show(cur + 1); });
     });

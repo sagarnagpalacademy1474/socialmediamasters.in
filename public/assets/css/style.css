@@ -342,3 +342,4 @@ a.contact-item:hover{border-color:var(--champ-d)}
 .cform textarea{min-height:120px;resize:vertical}
 .cform .sf-send{width:100%;margin-top:10px}
 @media (max-width:600px){.step-form,.cform{padding:30px 22px}}
+.step-form .sf-label{font-size:13px;color:var(--muted);font-weight:600;margin:14px 0 10px}
